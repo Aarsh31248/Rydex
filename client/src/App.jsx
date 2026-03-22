@@ -1,9 +1,12 @@
-import React from 'react'
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import { useLocation } from "react-router-dom";
 
 const App = () => {
-  return (
-    <div className='bg-red-500 text-center'>App</div>
-  )
-}
+  const [showLogin, setShowLogin] = useState(false);
+  const isOwnerPath = useLocation().pathname.startsWith("/owner");
 
-export default App
+  return <>{!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}</>;
+};
+
+export default App;
