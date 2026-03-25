@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-const { objectId } = mongoose.Schema.Types;
+const { ObjectId } = mongoose.Schema.Types;
 
 const carSchema = new mongoose.Schema(
   {
     owner: {
-      type: objectId,
+      type: ObjectId,
       ref: "User",
     },
     brand: {
@@ -36,7 +36,7 @@ const carSchema = new mongoose.Schema(
       required: true,
     },
     transmission: {
-      type: Number,
+      type: String,
       required: true,
     },
     pricePerDay: {
