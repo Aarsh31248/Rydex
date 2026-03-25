@@ -51,3 +51,16 @@ export const addCar = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
+
+// API to list Owner Cars
+export const getOwnerCars = async (req, res) => {
+  try {
+    const { _id } = req.user;
+    const cars = await Car.find({ owner: _id });
+
+    res.json({ success: true, message: cars });
+  } catch (error) {
+    console.log(error.message);
+    res.json({ success: false, message: error.message });
+  }
+};
