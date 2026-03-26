@@ -52,14 +52,14 @@ export const addCar = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
-
+ 
 // API to list Owner Cars
 export const getOwnerCars = async (req, res) => {
   try {
     const { _id } = req.user;
     const cars = await Car.find({ owner: _id });
 
-    res.json({ success: true, message: cars });
+    res.json({ success: true, cars });
   } catch (error) {
     console.log(error.message);
     res.json({ success: false, message: error.message });
@@ -70,7 +70,7 @@ export const getOwnerCars = async (req, res) => {
 export const toggleCarAvailability = async (req, res) => {
   try {
     const { _id } = req.user;
-    const carId = req.body;
+    const {carId} = req.body;
     const car = await Car.findById(carId);
 
     // Check if car belongs to the user
@@ -92,7 +92,7 @@ export const toggleCarAvailability = async (req, res) => {
 export const deleteCar = async (req, res) => {
   try {
     const { _id } = req.user;
-    const carId = req.body;
+    const {carId} = req.body;
     const car = await Car.findById(carId);
 
     // Check if car belongs to the user
@@ -122,9 +122,9 @@ export const getDashboardData = async (req, res) => {
     }
 
     const car = await Car.find({ owner: _id });
-    const bookings = (await Booking.find({ owner: _id }).populate("car")).sort({
-      createdAt: -1,
-    });
+    const bookings = await Booking.find({ owner: _id })
+      .populate("car")
+      .sort({ createdAt: -1 });
 
     const pendingBookings = await Booking.find({
       owner: _id,
@@ -150,7 +150,7 @@ export const getDashboardData = async (req, res) => {
       monthlyRevenue,
     };
 
-    res.json({ success: true, message: dashboardData });
+    res.json({ success: true, dashboardData });
   } catch (error) {
     console.log(error.message);
     res.json({ success: false, message: error.message });
