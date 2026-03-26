@@ -35,7 +35,7 @@ const CarCard = ({ car }) => {
       </div>
 
       <div className="p-4 sm:p-5">
-        <div className="flex justify-between items-start mb-2">
+        <div className="mb-2">
           <div>
             <h3 className="text-lg font-medium">
               {car.brand} {car.model}
@@ -45,7 +45,7 @@ const CarCard = ({ car }) => {
             </p>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-y-2 text-gray-600">
+          <div className="mt-3 grid grid-cols-2 gap-y-2 text-gray-600">
             <div className="flex items-center text-sm text-muted-foreground">
               <img src={assets.users_icon} alt="" className="h-4 mr-2" />
               <span>{car.seating_capacity} Seats</span>
