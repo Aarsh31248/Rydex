@@ -1,8 +1,19 @@
 # 🚀 Rydex — Car Rental Booking Platform
+![Full Stack](https://img.shields.io/badge/Type-Full--Stack-blueviolet)
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![Express](https://img.shields.io/badge/API-Express-black)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-A production-oriented full-stack car rental platform designed to handle real-world booking workflows including inventory management, availability validation, and role-based access for customers and car owners.
-
-Unlike basic CRUD demos, Rydex focuses on **data consistency, booking logic, and backend-driven validation used in real rental systems**.
+- Built a full-stack car rental platform using **React, Node.js, Express, and MongoDB**, supporting end-to-end booking workflows  
+- Implemented **backend validation to prevent double booking**, ensuring data consistency across concurrent requests  
+- Designed **role-based architecture (User & Owner)** with JWT authentication and protected API routes  
+- Developed **car inventory management system** with image uploads using Multer and optimized delivery via ImageKit  
+- Engineered **date-based booking system** with dynamic price calculation and booking lifecycle management  
+- Improved user experience with **responsive UI and real-time availability filtering**
 
 ---
 
